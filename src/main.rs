@@ -87,16 +87,22 @@ fn performance(p: usize, e: usize) {
 }
 
 fn auto_mode(p: usize, e: usize) -> () {
-	loop {
-		thread::sleep(Duration::from_millis(400));
-		let mut status = fs::read_to_string("/sys/class/power_supply/BAT1/status").unwrap();
-		status = status[..8].to_string();
-		if status == "Charging"{
-			balanced(p, e);
-		} else {
-			powersave(p, e);
-		}
-	}
+  let mut last_status = "empty".to_string();
+
+  loop {
+    thread::sleep(Duration::from_millis(400));
+    let mut status = fs::read_to_string("/sys/class/power_supply/BAT1/status").unwrap();
+    status = status[..8].to_string();
+
+    if status == "Charging" && last_status != status {
+      last_status = status;
+      balanced(p, e);
+    } else if last_status != status {
+      last_status = status;
+      powersave(p, e);
+    }
+  }
+
 }
 
 fn core_count() -> usize {
