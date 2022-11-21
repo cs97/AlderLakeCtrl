@@ -7,8 +7,6 @@
 ### Usage
 * AlderLakeCtrl powersave|balanced|performance|info|auto
 
-
-* list frequencies
 ```
 Usage: AlderLakeCtrl [OPTION]
 
