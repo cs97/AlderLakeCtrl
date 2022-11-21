@@ -6,3 +6,15 @@
 
 ### Usage
 * AlderLakeCtrl powersave|balanced|performance|info|auto
+
+
+* list frequencies
+```
+AlderLakeCtrl info
+```
+
+* set frequencies range to 400-1400MHz
+```
+AlderLakeCtrl powersave
+```
+
