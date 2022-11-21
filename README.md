@@ -10,11 +10,10 @@
 
 * list frequencies
 ```
-AlderLakeCtrl info
-```
+Usage: AlderLakeCtrl [OPTION]
 
-* set frequencies range to 400-1400MHz
-```
-AlderLakeCtrl powersave
-```
+\tOptions:
 
+
+
+```
