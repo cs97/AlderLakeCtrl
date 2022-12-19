@@ -23,3 +23,17 @@ Usage: AlderLakeCtrl [OPTION]
   auto            if Discharging { powersave } else { balanced }
 
 ```
+
+/etc/systemd/system/AlderLakeCtrl.service
+```
+[Unit]
+Description=AlderLakeCtrl
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/AlderLakeCtrl auto
+ExecStop=/usr/bin/AlderLakeCtrl performance
+
+[Install]
+WantedBy=multi-user.target
+```
