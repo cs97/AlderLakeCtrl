@@ -1,6 +1,8 @@
 # AlderLakeCtrl
 
 ### Installing
+* git clone https://github.com/cs97/AlderLakeCtrl
+* cd AlderLakeCtrl
 * cargo build --release
 * cp target/release/AlderLakeCtrl /usr/bin/AlderLakeCtrl
 
