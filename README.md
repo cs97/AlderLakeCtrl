@@ -18,11 +18,17 @@ Usage: AlderLakeCtrl [OPTION]
   
   balanced        set frequencies range to P=400-2400MHz E=400-2200MHz max 60W
   
+  balanced2       set frequencies range to P=400-3600MHz E=400-3300MHz
+
+  
   performance     set frequencies range to P=400-9999MHz E=400-9999MHz
   
   info            list frequencies
   
-  auto            if Discharging { powersave } else { balanced }
+  auto            if Charging { balanced } else { powersave }
+  
+  auto2           if capacity >= 90 { balanced2 } else { powersave }
+
 
 ```
 
