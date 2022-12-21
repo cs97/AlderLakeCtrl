@@ -75,6 +75,17 @@ fn balanced(p: usize, e: usize) {
   }
 }
 
+fn balanced2(p: usize, e: usize) {
+  for x in 0..p {
+    set_min_mhz(x, 400);
+    set_max_mhz(x, 3600);
+  }
+  for x in p..p+e {
+    set_min_mhz(x, 400);
+    set_max_mhz(x, 3300);
+  }
+}
+
 fn performance(p: usize, e: usize) {
   for x in 0..p {
     set_min_mhz(x, 400);
@@ -105,6 +116,25 @@ fn auto_mode(p: usize, e: usize) -> () {
 
 }
 
+fn auto_mode2(p: usize, e: usize) -> () {
+  let mut last_cap = 100;
+
+  loop {
+    thread::sleep(Duration::from_millis(400));
+    let capacity = fs::read_to_string("/sys/class/power_supply/BAT1/capacity").unwrap();
+    let cap: usize = capacity[..capacity.len() - 1].parse::<usize>().unwrap();
+
+    if cap >= 90 && last_cap != cap {
+      last_cap = cap;
+      balanced2(p, e);
+    } else if last_cap != cap {
+      last_cap = cap;
+      powersave(p, e);
+    }
+  }
+
+}
+
 fn core_count() -> usize {
   let mut cores = 1;
   loop {
@@ -129,9 +159,11 @@ fn switch_case(s: &str, p:usize, e: usize) -> () {
   match s {
     "powersave" => powersave(p, e),
     "balanced" => balanced(p, e),
+    "balanced2" => balanced2(p, e),
     "performance" => performance(p, e),
     "info" => cpu_info(p, e),
     "auto" => auto_mode(p, e),
+    "auto2" => auto_mode2(p, e),
     _ => print_usage(),
   }
 }
