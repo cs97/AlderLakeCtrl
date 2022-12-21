@@ -20,7 +20,6 @@ Usage: AlderLakeCtrl [OPTION]
   
   balanced2       set frequencies range to P=400-3600MHz E=400-3300MHz
 
-  
   performance     set frequencies range to P=400-9999MHz E=400-9999MHz
   
   info            list frequencies
