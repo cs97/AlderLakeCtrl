@@ -71,7 +71,7 @@ fn balanced(p: usize, e: usize) {
   }
   for x in p..p+e {
     set_min_mhz(x, 400);
-    set_max_mhz(x, 2200);
+    set_max_mhz(x, 2100);
   }
 }
 
