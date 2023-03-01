@@ -71,18 +71,18 @@ fn balanced(p: usize, e: usize) {
   }
   for x in p..p+e {
     set_min_mhz(x, 400);
-    set_max_mhz(x, 2100);
+    set_max_mhz(x, 1800);
   }
 }
 
 fn balanced2(p: usize, e: usize) {
   for x in 0..p {
     set_min_mhz(x, 400);
-    set_max_mhz(x, 3600);
+    set_max_mhz(x, 3200);
   }
   for x in p..p+e {
     set_min_mhz(x, 400);
-    set_max_mhz(x, 3300);
+    set_max_mhz(x, 2400);
   }
 }
 
@@ -151,8 +151,19 @@ fn core_count() -> usize {
 }
 
 fn print_usage() -> () {
-	println!("usage:");
-	println!("\tAlderLakeCtrl {}", "powersave|balanced|performance|info|auto\n");
+	//println!("usage:");
+	//println!("\tAlderLakeCtrl {}", "powersave|balanced|performance|info|auto\n");
+	println!("Usage: AlderLakeCtrl [OPTION]\n
+		\n\tOptions:
+		\n\tpowersave\tset frequencies range to 400-1400Mhz
+		\n\tbalanced\tset frequencies range to P=400-2400MHz E=400-1800MHz
+		\n\tbalanced2\tset frequencies range to P=400-3200MHz E=400-2400MHz
+		\n\tperformance\tset frequencies range to P=400-9999MHz E=400-9999MHz
+		\n\tinfo\tlist frequencies
+		\n\tauto\tif Charging {{ balanced }} else {{ powersave }}
+		\n\tauto2\tif capacity >= 90 {{ balanced2 }} else {{ powersave }}
+    ");
+
 }
 
 fn switch_case(s: &str, p:usize, e: usize) -> () {
