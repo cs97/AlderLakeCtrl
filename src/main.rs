@@ -159,9 +159,9 @@ fn print_usage() -> () {
 		\n\tbalanced\tset frequencies range to P=400-2400MHz E=400-1800MHz
 		\n\tbalanced2\tset frequencies range to P=400-3200MHz E=400-2400MHz
 		\n\tperformance\tset frequencies range to P=400-9999MHz E=400-9999MHz
-		\n\tinfo\tlist frequencies
-		\n\tauto\tif Charging {{ balanced }} else {{ powersave }}
-		\n\tauto2\tif capacity >= 90 {{ balanced2 }} else {{ powersave }}
+		\n\tinfo\t\tlist frequencies
+		\n\tauto\t\tif Charging {{ balanced }} else {{ powersave }}
+		\n\tauto2\t\tif capacity >= 90 {{ balanced2 }} else {{ powersave }}
     ");
 
 }
