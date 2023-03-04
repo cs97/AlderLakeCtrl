@@ -126,7 +126,7 @@ fn auto_mode2(p: usize, e: usize) -> () {
 
     if cap >= 90 && last_cap != cap {
       last_cap = cap;
-      balanced2(p, e);
+      balanced(p, e);
     } else if last_cap != cap {
       last_cap = cap;
       powersave(p, e);
@@ -185,7 +185,7 @@ fn print_usage() -> () {
 		\n\tperformance\tset frequencies range to P=400-9999MHz E=400-9999MHz
 		\n\tinfo\t\tlist frequencies
 		\n\tauto\t\tif Charging {{ balanced }} else {{ powersave }}
-		\n\tauto2\t\tif capacity >= 90 {{ balanced2 }} else {{ powersave }}
+		\n\tauto2\t\tif capacity >= 90 {{ balanced }} else {{ powersave }}
     ");
 
 }
