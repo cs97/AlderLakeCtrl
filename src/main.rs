@@ -135,7 +135,7 @@ fn auto_mode2(p: usize, e: usize) -> () {
 
 }
 
-fn core_count() -> usize {
+fn core_count() -> (usize, usize) {
   let mut cores = 1;
   loop {
     let s = format!("/sys/devices/system/cpu/cpu{}", cores);
