@@ -147,7 +147,31 @@ fn core_count() -> usize {
     };
   };
 	//cores += 1;
-	return cores;
+	//return cores;
+
+  // 1220P
+  if cores == 12 {
+    return (4, 8)
+    //p = 4;
+    //e = 8;
+  }
+
+  // 1240P & 1260P
+  if cores == 16 {
+    return (8, 8)
+    //p = 8;
+    //e = 8;
+  }
+
+  // 1280P
+  if cores == 20 {
+    return (12, 8)
+    //p = 12;
+	//e = 8;
+  }
+
+  return (cores, 0)
+
 }
 
 fn print_usage() -> () {
@@ -181,30 +205,7 @@ fn switch_case(s: &str, p:usize, e: usize) -> () {
 
 fn main() {
 
-  let mut p = 0;
-  let mut e = 0;
-
-  let cores = core_count();
-
-  //p = cores;
-
-  // 1220P
-  if cores == 12 {
-    p = 4;
-    e = 8;
-  }
-
-  // 1240P & 1260P
-  if cores == 16 {
-    p = 8;
-    e = 8;
-  }
-
-  // 1280P
-  if cores == 20 {
-    p = 12;
-		e = 8;
-  }
+  let (p, e) = core_count();
 
   let args: Vec<String> = env::args().collect();
   if args.len() < 2 {
