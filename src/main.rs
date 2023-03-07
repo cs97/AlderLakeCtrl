@@ -124,7 +124,7 @@ fn auto_mode2(p: usize, e: usize) -> () {
     let capacity = fs::read_to_string("/sys/class/power_supply/BAT1/capacity").unwrap();
     let cap: usize = capacity[..capacity.len() - 1].parse::<usize>().unwrap();
 
-    if cap >= 90 && last_cap != cap {
+    if cap >= 95 && last_cap != cap {
       last_cap = cap;
       balanced(p, e);
     } else if last_cap != cap {
