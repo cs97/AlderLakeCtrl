@@ -185,7 +185,7 @@ fn print_usage() -> () {
 		\n\tperformance\tset frequencies range to P=400-9999MHz E=400-9999MHz
 		\n\tinfo\t\tlist frequencies
 		\n\tauto\t\tif Charging {{ balanced }} else {{ powersave }}
-		\n\tauto2\t\tif capacity >= 90 {{ balanced }} else {{ powersave }}
+		\n\tauto2\t\tif capacity >= 95 {{ balanced }} else {{ powersave }}
     ");
 
 }
