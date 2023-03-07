@@ -26,7 +26,7 @@ Usage: AlderLakeCtrl [OPTION]
   
   auto            if Charging { balanced } else { powersave }
   
-  auto2           if capacity >= 90 { balanced } else { powersave }
+  auto2           if capacity >= 95 { balanced } else { powersave }
 
 
 ```
