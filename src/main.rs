@@ -60,7 +60,7 @@ fn powersave(p: usize, e: usize) {
   }
   for x in p..p+e {
     set_min_mhz(x, 400);
-    set_max_mhz(x, 1400);
+    set_max_mhz(x, 1000);
   }
 }
 
