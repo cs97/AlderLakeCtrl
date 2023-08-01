@@ -14,7 +14,7 @@ Usage: AlderLakeCtrl [OPTION]
 
   Options:
   
-  powersave       set frequencies range to 400-1400Mhz
+  powersave       set frequencies range to P=400-1400Mhz E=400-1000MHz
   
   balanced        set frequencies range to P=400-2400MHz E=400-1800MHz
   
